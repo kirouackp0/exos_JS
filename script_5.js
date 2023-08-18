@@ -16,53 +16,31 @@ const books = [
 ];
 
 // see if book never borrowed
-let allBorrowed = true;
 
-for (let i = 0; i < books.length; i++) {
-  if (books[i].rented === 0) {
-    allBorrowed = false;
-    break;
-  }
-}
+let anyNotBorrowed = books.some(function(book) {
+  return book.rented === 0;
+});
 
-if (allBorrowed) {
+if (anyNotBorrowed) {
+  console.log("At least one book has not been borrowed.");
+} else {
   console.log("All books have been borrowed at least once.");
 }
 
 // most borrowed book
-let mostBorrowed = null;
-let maxRentals = -1;
+books.sort(function(a, b) {
+  return b.rented - a.rented;
+});
 
-for (let i = 0; i < books.length; i++) {
-  if (books[i].rented > maxRentals) {
-    maxRentals = books[i].rented;
-    mostBorrowed = books[i];
-  }
-}
-
-if (mostBorrowed) {
-  console.log(`The most borrowed book is "${mostBorrowed.title}" with ${mostBorrowed.rented} rentals.`);
-} else {
-  console.log("No books available.");
-}
+console.log("Most rented book:", books[0]);
 
 // least borrowed book
 
-let leastBorrowed = null;
-let minRentals = Infinity;
+books.sort(function(a, b) {
+  return a.rented - b.rented;
+});
 
-for (let i = 0; i < books.length; i++) {
-  if (books[i].rented < minRentals) {
-    minRentals = books[i].rented;
-    leastBorrowed = books[i];
-  }
-}
-
-if (leastBorrowed) {
-  console.log(`The least borrowed book is "${leastBorrowed.title}" with ${leastBorrowed.rented} rentals.`);
-} else {
-  console.log("No books available.");
-}
+console.log("Least rented book:", books[0]);
 
 // Book with ID 873495
 
@@ -77,6 +55,7 @@ if (bookWithId873495) {
 }
 
 // Delete book with ID 133712
+// .filter creates a new array will all books except the one specified
 
 let idToDelete = 133712;
 
