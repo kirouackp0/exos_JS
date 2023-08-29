@@ -24,4 +24,4 @@ function calculateFactorial(numInt) {
     return numInt * calculateFactorial(numInt - 1);
 }
 
-console.log(calculateFactorial(numInt));
+console.log(`La factorielle de ${num} est:`, calculateFactorial(numInt));

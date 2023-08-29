@@ -26,31 +26,31 @@ entrepreneurs.sort(function(a,b) {
     return a.year - b.year;
 });
 
-console.log(entrepreneurs);
+console.log("Entrepreneurs par année de naissance", entrepreneurs);
 
 // array entrepreneurs nés années 70
 let entrepreneursSeventies = entrepreneurs.filter(function(entrepreneur) {
     return entrepreneur.year >= 1970 && entrepreneur.year <= 1979;
 });
 
-console.log(entrepreneursSeventies);
+console.log("Entrepreneurs nés dans les années 70", entrepreneursSeventies);
 
 // âge des entrepreneurs aujourd'hui
 let age = entrepreneurs.map (function(entrepreneur) {
     return 2023 - entrepreneur.year;
 });
 
-console.log(age);
+console.log("Age actuel des entrepreneurs", age);
 
 // array contenant le prenom et nom
 let entrepreneurNames = entrepreneurs.map(function(entrepreneur) {
     return entrepreneur.first + ' ' + entrepreneur.last;
 });
-console.log(entrepreneurNames);
+console.log("Noms et prénoms des entrepreneurs", entrepreneurNames);
 
 // par ordre alphabétique nom de famille
 entrepreneurs.sort(function(a,b) {
     return a.last.localeCompare(b.last);
 });
 
-console.log(entrepreneurs);
+console.log("Entrepreneurs par orde alphabétique (nom de famille)", entrepreneurs);

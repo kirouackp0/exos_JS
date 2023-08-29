@@ -6,7 +6,7 @@ const books = [
   { title: 'Orgueil & Préjugés', id: 873495, rented: 67 },
   { title: 'Les frères Karamazov', id: 450911, rented: 55 },
   { title: 'Dans les forêts de Sibérie', id: 8376365, rented: 15 },
-  { title: 'Pourquoi j\'ai mangé mon père', id: 450911, rented: 45 },
+  { title: 'Pourquoi jai mangé mon père', id: 450911, rented: 45 },
   { title: 'Et on tuera tous les affreux', id: 67565, rented: 36 },
   { title: 'Le meilleur des mondes', id: 88847, rented: 58 },
   { title: 'La disparition', id: 364445, rented: 33 },
@@ -63,12 +63,19 @@ let updatedBooks = books.filter(function(book) {
   return book.id !== idToDelete;
 });
 
-console.log(updatedBooks);
+console.log("Supprimer un livre", updatedBooks);
 
 // Sorted alphabetically
 
-books.sort(function(a,b) {
+updatedBooks.sort(function(a,b) {
     return a.title.localeCompare(b.title);
 });
 
-console.log(books)
+console.log("Livres par ordre alphabétique", updatedbooks)
+
+
+updatedBooks.sort(function(a,b) {
+    return a.title.localeCompare(b.title);
+});
+
+console.log("Livres par ordre alphabétique", updatedbooks)
